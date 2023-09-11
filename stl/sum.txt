@@ -1,0 +1,113 @@
+
+
+
+
+STL: Standard Template Library
+
+
+模板, Template
+    模板类
+    模板函数
+
+
+STL 是由以下 6 部分构成的 
+    容器, Container
+    算法, Algorithm
+    迭代器, Iterator
+    函数对象
+    适配器
+    内存分配器
+
+
+    容器 和 算法 可以通过 迭代器 连接
+
+
+
+涉及的头文件
+    vector
+    list
+    stack
+    queue
+    deque
+    set
+    map
+
+    algorithm
+    iterator
+
+    functional
+    numeric
+    utility
+
+    memory
+
+
+
+容器, Container
+
+    序列式容器, Sequence Container
+        元素位置是固定的，取决于插入时机和地点，和元素值无关
+        vector
+        list
+        stack
+        queue
+        deque
+
+    关联式窗口, Associated Container
+        元素位置取决于特定的排序准则，和插入顺序无关
+        set
+        multiset
+        map
+        multimap
+
+
+    各个容器的特点
+        vector
+            连续存储
+            随机访问迭代器，迭代器可以一次移动多个位置
+                it++
+                it+=3
+        list
+            双向链表
+        stack
+            栈, FILO
+        queue
+            队列, FIFO
+        deque
+            双向队列
+        set
+            集合，红黑树
+            multiset
+                允许存在两个次序相等的元素的集合
+        map
+            映射，红黑树
+            multimap
+                允许键对有相等的次序的映射
+
+
+
+算法, Algorithm
+
+迭代器, Iterator
+
+函数对象
+
+适配器
+
+内存分配器
+
+
+
+githbu
+    my tiny stl
+
+
+
+C
+    指针
+    内存模式
+    编译链接
+
+C++
+    模板
+    标准库

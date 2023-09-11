@@ -1,0 +1,238 @@
+
+
+C|Cpp|Java|Kotlin
+	Golang|Swift
+	Assembly
+
+
+
+Overload - 重载
+	函数名相同，参数列表不同
+	
+	参数列表不同
+		类型
+		个数
+		顺序
+		是否使用 const 修饰参数
+		类内的 非const 与 const 函数
+
+	注: 函数返回值类型，不作为判断依据
+
+
+
+Override - 重写
+
+	函数签名完全一致
+		函数名称
+		参数列表
+		返回值类型
+
+
+
+pointer
+	指针常量
+		const char *p = "hi";
+		char const *p = "hi";
+
+	常量指针
+		int a = 10;
+		int * const p = &a;
+
+	只读指针
+		int a = 10;
+		const int * const p = &a;
+		int const * const p = &a;
+
+
+const
+	作用于 参数，函数
+
+
+reference
+
+
+
+
+内存管理
+
+	malloc / free
+
+	new / delete
+		delete 指针变量名
+		delete [] 数组名
+
+	
+	区别:
+		new 会调用对象的 构造函数，delete 会调用对象的 析构函数
+		而 malloc 和 free 不会做以上操作
+
+
+
+多态 - polymorphism
+
+	父类指针指向子类对象
+		C++默认不支持多态
+			解决: 虚函数，父类使用 virtual 修饰成员函数
+				原理: 虚表，在子类对象的前4个字节记录了一张虚表的地址
+
+
+	父类指针指向子类对象带来的问题
+		释放父类指针时，不会自动调用子类的析构函数
+			解决: 虚析构
+
+
+
+继承 - Inheritance
+
+	同名成员变量
+
+	同名成员函数
+
+	菱形继承
+		虚继承
+
+
+	纯虚函数
+		抽象类
+
+
+
+
+友元
+    友元函数
+		非成员函数
+			全局函数
+		成员函数
+    友元类
+
+
+
+运算符重载
+
+	+
+	-
+		单目
+		双目
+
+	==
+	!=
+
+	a++
+	++a
+		a--;
+		--a;
+
+	<<，cout
+	>>，cin
+
+	[]，动态数组
+
+	()，仿函数
+
+	->，auto_ptr
+
+
+
+深浅拷贝
+	结构体
+	类
+
+	结构体与类
+		函数参数
+		函数返回值类型
+		直接赋值
+
+	浅拷贝
+		多次 free 堆内存
+
+	深拷贝
+		重载拷贝构造
+		重载赋值运算符
+
+
+模板
+	template <typename R, typename P1, typename P2>
+	R test(P1 x, P2 y) {
+		return x + y;
+	}
+
+
+
+cast
+	const_cast
+		const -> non-const
+
+	static_cast
+		non-const -> const
+
+	dynamic_cast
+		hirerarchy
+
+	reintercept_cast
+		low level copy
+
+
+
+
+ptr
+	auto_ptr;
+		无法用于数组
+
+	shared_ptr;
+		可用于单个指针变量，也可以用于数组
+		多个指针指向同一个对象
+
+	weak_ptr;
+		循环引用解决
+
+	unique_ptr
+    	只能有一个指针指向同一个对象
+
+
+
+
+必须初始化
+	常量指针
+	引用
+	静态属性
+	const成员变量
+		必须初始化（类内部初始化），可以在声明的时候直接初始化赋值
+
+
+
+当声明和实现分离时
+	inline函数的 inline 关键字 放在 声明 或 实现
+
+	静态属性实现部分不能带static
+	
+	默认参数放在声明部分
+		默认参数主要是给编译器使用的
+	
+	模板在实现部分需要单独使用 template <typename T>
+		模板 声明与实现 必须放在同一文件
+
+	const成员函数（非静态）
+		const关键字写在参数列表后面，函数的声明和实现都必须带const
+
+
+
+非const 与 const
+	参数:
+		非const 只能接收 非const
+		const 可以接收 非const 或 const
+
+
+非静态 与 静态
+	非静态可以访问全部成员
+
+	静态只可以访问静态成员
+
+
+
+函数构造
+	初始化
+		int *p1 = new int;
+		int *p2 = new int();
+	无参构造
+	拷贝构造
+	operator=
