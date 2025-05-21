@@ -1,0 +1,14 @@
+
+
+
+Assembly
+
+
+C|Cpp
+    https://google.github.io/styleguide/cppguide.html
+
+    Qt
+
+
+Java
+    Android
